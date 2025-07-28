@@ -36,9 +36,9 @@
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
    */
   "vars": {
-    "EMAIL_FROM": "no-reply@notifications.agenticdev.agency",
-    "EMAIL_FROM_NAME": "AgenticDev.agency",
-    "EMAIL_REPLY_TO": "support@agenticdev.agency"
+    "EMAIL_FROM": "no-reply@notifications.ericzzz.com",
+    "EMAIL_FROM_NAME": "EricZZZ",
+    "EMAIL_REPLY_TO": "support@ericzzz.com"
   },
   /**
    * Note: Use secrets to store sensitive data.
