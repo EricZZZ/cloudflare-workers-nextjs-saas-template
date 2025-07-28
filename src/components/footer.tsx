@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { SiX as XIcon, SiGithub as GithubIcon } from '@icons-pack/react-simple-icons'
 import ThemeSwitch from "@/components/theme-switch";
 import { GITHUB_REPO_URL, SITE_NAME } from "@/constants";
-import { Button } from "./ui/button";
-import AgenticDevStudioLogo from "./agenticdev-studio-logo";
 import { getGithubStars } from "@/utils/stats";
+import { SiGithub as GithubIcon } from '@icons-pack/react-simple-icons';
+import Link from "next/link";
 import { Suspense } from "react";
+import AgenticDevStudioLogo from "./agenticdev-studio-logo";
+import { Button } from "./ui/button";
 
 export function Footer() {
   return (
@@ -48,7 +48,7 @@ export function Footer() {
               <h3 className="text-sm font-semibold text-foreground text-center md:text-left">Social</h3>
               <div className="flex items-center space-x-4">
                 <a
-                  href="https://github.com/LubomirGeorgiev"
+                  href="https://github.com/EricZZZ"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground"
@@ -56,15 +56,15 @@ export function Footer() {
                   <GithubIcon className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </a>
-                <a
-                  href="https://x.com/LubomirGeorg"
+                {/* <a
+                  href="https://x.com/EricZZZ"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   <XIcon className="h-5 w-5" />
                   <span className="sr-only">X (formerly Twitter)</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

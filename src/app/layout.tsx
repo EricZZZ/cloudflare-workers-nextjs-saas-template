@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import "server-only";
+import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers";
+import { AgenticDevStudioStickyBanner } from "@/components/startup-studio-sticky-banner";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NextTopLoader from 'nextjs-toploader'
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/constants";
-import { AgenticDevStudioStickyBanner } from "@/components/startup-studio-sticky-banner";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/constants";
+import NextTopLoader from 'nextjs-toploader';
 
 export const dynamic = "force-dynamic";
 
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   keywords: ["SaaS", "Next.js", "React", "TypeScript", "Cloudflare Workers", "Edge Computing"],
-  authors: [{ name: "Lubomir Georgiev" }],
-  creator: "Lubomir Georgiev",
+  authors: [{ name: "EricZZZ" }],
+  creator: "EricZZZ",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE_NAME,
-    description: SITE_DESCRIPTION,
-    creator: "@LubomirGeorg",
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: SITE_NAME,
+  //   description: SITE_DESCRIPTION,
+  //   creator: "@LubomirGeorg",
+  // },
   robots: {
     index: true,
     follow: true,
