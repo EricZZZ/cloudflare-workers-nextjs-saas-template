@@ -83,6 +83,7 @@ export function SettingsSidebar() {
         <Dialog>
           <DialogTrigger asChild>
             <button
+              type="button"
               className={cn(
                 buttonVariants({ variant: "destructive" }),
                 "justify-start hover:no-underline whitespace-nowrap lg:mt-4 bg-red-700/25 hover:bg-red-600/40"

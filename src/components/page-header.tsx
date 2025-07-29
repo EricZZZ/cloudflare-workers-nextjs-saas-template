@@ -9,13 +9,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
-interface BreadcrumbItem {
+interface BreadcrumbItemProps {
   href: string;
   label: string;
 }
 
 interface PageHeaderProps {
-  items: BreadcrumbItem[];
+  items: BreadcrumbItemProps[];
 }
 
 export function PageHeader({ items }: PageHeaderProps) {

@@ -3,6 +3,8 @@ import type { SVGProps } from "react";
 export default function Google(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      role="img"
+      aria-label="Google"
       width="1em"
       height="1em"
       viewBox="0 0 256 262"

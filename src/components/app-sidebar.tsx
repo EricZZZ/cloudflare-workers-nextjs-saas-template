@@ -4,7 +4,7 @@ import {
   Building2,
   CreditCard,
   Frame,
-  Map,
+  MapPinned,
   PieChart,
   Settings2,
   ShoppingCart,
@@ -141,7 +141,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {
         title: "Travel",
         url: "#",
-        icon: Map,
+        icon: MapPinned,
       },
     ],
   };

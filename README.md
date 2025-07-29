@@ -1,9 +1,9 @@
 # Cloudflare Workers SaaS Template
 
-[![.github/workflows/deploy.yml](https://github.com/LubomirGeorgiev/cloudflare-workers-nextjs-saas-template/actions/workflows/deploy.yml/badge.svg)](https://github.com/LubomirGeorgiev/cloudflare-workers-nextjs-saas-template/actions/workflows/deploy.yml)
+[![.github/workflows/deploy.yml](https://github.com/EricZZZ/cloudflare-workers-nextjs-saas-template/actions/workflows/deploy.yml/badge.svg)](https://github.com/EricZZZ/cloudflare-workers-nextjs-saas-template/actions/workflows/deploy.yml)
 
-# [Live Demo](https://nextjs-saas-template.agenticdev.agency/sign-up)
-# [Github Repo](https://github.com/LubomirGeorgiev/cloudflare-workers-nextjs-saas-template)
+# [Live Demo](https://saas.ericzzz.com/sign-up)
+# [Github Repo](https://github.com/EricZZZ/cloudflare-workers-nextjs-saas-template)
 
 This is a SaaS template for Cloudflare Workers. It uses the [OpenNext](https://opennext.js.org/cloudflare) framework to build a SaaS application.
 

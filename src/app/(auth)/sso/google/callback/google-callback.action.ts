@@ -1,6 +1,6 @@
 "use server";
 
-import { decodeIdToken } from "arctic";
+import { decodeIdToken, type OAuth2Tokens } from "arctic";
 import { eq } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { createServerAction, ZSAError } from "zsa";
@@ -75,7 +75,7 @@ export const googleSSOCallbackAction = createServerAction()
         throw new ZSAError("NOT_AUTHORIZED", "Invalid state parameter");
       }
 
-      let tokens;
+      let tokens: OAuth2Tokens;
       try {
         const google = getGoogleSSOClient();
         tokens = await google.validateAuthorizationCode(
