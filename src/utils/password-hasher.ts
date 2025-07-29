@@ -52,7 +52,7 @@ async function verifyPassword({
 }: VerifyPasswordParams) {
   const [saltHex, originalHash] = storedHash.split(":");
   const salt = new Uint8Array(
-    saltHex.match(/.{1,2}/g)?.map((byte: string) => parseInt(byte, 16))
+    saltHex.match(/.{1,2}/g)?.map((byte: string) => parseInt(byte, 16)) || []
   );
 
   const attemptHashWithSalt = await hashPassword({
