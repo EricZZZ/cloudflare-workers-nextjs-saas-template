@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import { getSessionFromCookie } from "@/utils/auth";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import GoogleCallbackClientComponent from "./google-callback.client";
 import { REDIRECT_AFTER_SIGN_IN } from "@/constants";
+import { getSessionFromCookie } from "@/utils/auth";
+import GoogleCallbackClientComponent from "./google-callback.client";
 
 export const metadata: Metadata = {
   title: "Sign in with Google",

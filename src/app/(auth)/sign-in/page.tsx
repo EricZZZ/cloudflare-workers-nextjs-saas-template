@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import { getSessionFromCookie } from "@/utils/auth";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import SignInClientPage from "./sign-in.client";
 import { REDIRECT_AFTER_SIGN_IN } from "@/constants";
+import { getSessionFromCookie } from "@/utils/auth";
+import SignInClientPage from "./sign-in.client";
 
 export const metadata: Metadata = {
   title: "Sign In",
@@ -16,15 +16,14 @@ const SignInPage = async ({
 }) => {
   const { redirect: redirectParam } = await searchParams;
   const session = await getSessionFromCookie();
-  const redirectPath = redirectParam ?? REDIRECT_AFTER_SIGN_IN as unknown as string;
+  const redirectPath =
+    redirectParam ?? (REDIRECT_AFTER_SIGN_IN as unknown as string);
 
   if (session) {
     return redirect(redirectPath);
   }
 
-  return (
-    <SignInClientPage redirectPath={redirectPath} />
-  )
-}
+  return <SignInClientPage redirectPath={redirectPath} />;
+};
 
 export default SignInPage;

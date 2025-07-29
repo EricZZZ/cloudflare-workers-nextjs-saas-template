@@ -1,15 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { toast } from "sonner";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { useServerAction } from "zsa-react";
-import { verifyEmailAction } from "./verify-email.action";
-import { verifyEmailSchema } from "@/schemas/verify-email.schema";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { REDIRECT_AFTER_SIGN_IN } from "@/constants";
+import { verifyEmailSchema } from "@/schemas/verify-email.schema";
+import { verifyEmailAction } from "./verify-email.action";
 
 export default function VerifyEmailClientComponent() {
   const router = useRouter();
@@ -17,7 +23,11 @@ export default function VerifyEmailClientComponent() {
   const token = searchParams.get("token");
   const hasCalledVerification = useRef(false);
 
-  const { execute: handleVerification, isPending, error } = useServerAction(verifyEmailAction, {
+  const {
+    execute: handleVerification,
+    isPending,
+    error,
+  } = useServerAction(verifyEmailAction, {
     onError: ({ err }) => {
       toast.dismiss();
       toast.error(err.message || "Failed to verify email");
@@ -49,7 +59,7 @@ export default function VerifyEmailClientComponent() {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token]);
+  }, [token, handleVerification, router.push]);
 
   if (isPending) {
     return (
@@ -100,7 +110,8 @@ export default function VerifyEmailClientComponent() {
           <CardHeader>
             <CardTitle>Invalid verification link</CardTitle>
             <CardDescription>
-              The verification link is invalid. Please request a new verification email.
+              The verification link is invalid. Please request a new
+              verification email.
             </CardDescription>
           </CardHeader>
           <CardContent>

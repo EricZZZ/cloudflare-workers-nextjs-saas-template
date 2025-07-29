@@ -1,8 +1,8 @@
+import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import { SessionsClient } from "./sessions.client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getSessionsAction } from "./sessions.actions";
-import { redirect } from "next/navigation";
+import { SessionsClient } from "./sessions.client";
 
 export const metadata = {
   title: "Sessions",
@@ -10,10 +10,10 @@ export const metadata = {
 };
 
 export default async function SessionsPage() {
-  const [sessions, error] = await getSessionsAction()
+  const [sessions, error] = await getSessionsAction();
 
   if (error) {
-    return redirect('/')
+    return redirect("/");
   }
 
   return (

@@ -4,6 +4,8 @@
     "tamasfe.even-better-toml",
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
-    "mattpocock.ts-error-translator"
+    "mattpocock.ts-error-translator",
+    "biomejs.biome",
+    "lokalise.i18n-ally"
   ]
 }

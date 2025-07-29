@@ -87,8 +87,7 @@ Have a look at the [project plan](./cursor-docs/project-plan.md) to get an overv
 - 👨‍💻 Developer Experience
   - 🧪 Local Development Setup
   - 📘 TypeScript Support
-  - 🔍 ESLint Configuration
-  - ✨ Prettier Configuration
+  - ⚡ Biome for Linting and Formatting
   - 🔐 Type-safe Environment Variables
   - 🏗️ Cloudflare Types Generation
   - 🤖 AI-powered Development with Cursor
@@ -114,8 +113,9 @@ Have a look at the [project plan](./cursor-docs/project-plan.md) to get an overv
 
 ## Planned features (TODO):
 
-- [ ] Add an eslint rule to check for unused imports and exports
-- [ ] Add an eslint rule to check for unused variables and functions
+- [x] Add an eslint rule to check for unused imports and exports
+- [x] Add an eslint rule to check for unused variables and functions
+- [x] Migrate from ESLint and Prettier to Biome
 - [ ] Upgrade to Tailwind 4 and fix the errors and visual regressions. Already started here https://github.com/LubomirGeorgiev/cloudflare-workers-nextjs-saas-template/tree/tailwind-4-upgrade
 - [ ] Update Meta SEO tags 🔍
 - [ ] Dynamic OpenGraph images 📸
@@ -133,6 +133,26 @@ Have a look at the [project plan](./cursor-docs/project-plan.md) to get an overv
 4. `pnpm db:migrate:dev` - Creates a local SQLite database and applies migrations
 5. `pnpm dev`
 6.  Open http://localhost:3000
+
+## Code Quality and Formatting
+
+This project uses [Biome](https://biomejs.dev/) for linting and formatting instead of ESLint and Prettier.
+
+### Available Commands:
+- `pnpm lint` - Check for linting issues
+- `pnpm lint:fix` - Fix auto-fixable linting issues
+- `pnpm format` - Format code
+- `pnpm format:check` - Check if code is formatted correctly
+
+### VS Code Integration:
+The project includes VS Code settings that automatically:
+- Format code on save
+- Organize imports on save
+- Use Biome as the default formatter
+
+### Configuration:
+- `biome.json` - Main Biome configuration
+- `.biomeignore` - Files and directories to ignore
 
 ## Changes to wrangler.jsonc
 

@@ -1,8 +1,8 @@
 import "server-only";
-import { checkRateLimit } from "./rate-limit";
-import { getIP } from "./get-IP";
 import ms from "ms";
+import { getIP } from "./get-IP";
 import isProd from "./is-prod";
+import { checkRateLimit } from "./rate-limit";
 
 interface RateLimitConfig {
   /**
@@ -28,7 +28,6 @@ export async function withRateLimit<T>(
   action: () => Promise<T>,
   config: RateLimitConfig
 ): Promise<T> {
-
   if (!isProd) {
     return action();
   }

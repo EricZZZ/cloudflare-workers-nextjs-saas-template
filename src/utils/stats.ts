@@ -1,8 +1,8 @@
 import "server-only";
+import { GITHUB_REPO_URL } from "@/constants";
 import { getDB } from "@/db";
 import { userTable } from "@/db/schema";
-import { withKVCache, CACHE_KEYS } from "./with-kv-cache";
-import { GITHUB_REPO_URL } from "@/constants";
+import { CACHE_KEYS, withKVCache } from "./with-kv-cache";
 
 export async function getTotalUsers() {
   return withKVCache(
@@ -24,7 +24,9 @@ export async function getGithubStars() {
   }
 
   // Extract owner and repo from GitHub URL
-  const match = (GITHUB_REPO_URL as string)?.match(/github\.com\/([^/]+)\/([^/]+)/);
+  const match = (GITHUB_REPO_URL as string)?.match(
+    /github\.com\/([^/]+)\/([^/]+)/
+  );
   if (!match) return null;
 
   const [, owner, repo] = match;
@@ -33,7 +35,9 @@ export async function getGithubStars() {
 
   return withKVCache(
     async () => {
-      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+      const response = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}`
+      );
       if (!response.ok) return null;
 
       const data = (await response.json()) as {
@@ -48,4 +52,3 @@ export async function getGithubStars() {
     }
   );
 }
-

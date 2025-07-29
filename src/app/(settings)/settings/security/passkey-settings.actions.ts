@@ -1,22 +1,25 @@
 "use server";
 
-import { z } from "zod";
-import {
-  generatePasskeyRegistrationOptions,
-  verifyPasskeyRegistration,
-  generatePasskeyAuthenticationOptions,
-  verifyPasskeyAuthentication
-} from "@/utils/webauthn";
-import { getDB } from "@/db";
-import { userTable, passKeyCredentialTable } from "@/db/schema";
+import type {
+  AuthenticationResponseJSON,
+  RegistrationResponseJSON,
+} from "@simplewebauthn/types";
 import { eq } from "drizzle-orm";
-import { createServerAction, ZSAError } from "zsa";
-import { requireVerifiedEmail, createAndStoreSession } from "@/utils/auth";
-import type { User } from "@/db/schema";
-import type { RegistrationResponseJSON, AuthenticationResponseJSON } from "@simplewebauthn/types";
 import { headers } from "next/headers";
+import { z } from "zod";
+import { createServerAction, ZSAError } from "zsa";
+import { getDB } from "@/db";
+import type { User } from "@/db/schema";
+import { passKeyCredentialTable, userTable } from "@/db/schema";
+import { createAndStoreSession, requireVerifiedEmail } from "@/utils/auth";
 import { getIP } from "@/utils/get-IP";
-import { withRateLimit, RATE_LIMITS } from "@/utils/with-rate-limit";
+import {
+  generatePasskeyAuthenticationOptions,
+  generatePasskeyRegistrationOptions,
+  verifyPasskeyAuthentication,
+  verifyPasskeyRegistration,
+} from "@/utils/webauthn";
+import { RATE_LIMITS, withRateLimit } from "@/utils/with-rate-limit";
 
 const generateRegistrationOptionsSchema = z.object({
   email: z.string().email(),
@@ -40,7 +43,10 @@ export const generateRegistrationOptionsAction = createServerAction()
 
       // Verify the email matches the logged-in user
       if (user.id !== session?.user?.id) {
-        throw new ZSAError("FORBIDDEN", "You can only register passkeys for your own account");
+        throw new ZSAError(
+          "FORBIDDEN",
+          "You can only register passkeys for your own account"
+        );
       }
 
       // Check if user has reached the passkey limit
@@ -56,7 +62,10 @@ export const generateRegistrationOptionsAction = createServerAction()
         );
       }
 
-      const options = await generatePasskeyRegistrationOptions(user.id, input.email);
+      const options = await generatePasskeyRegistrationOptions(
+        user.id,
+        input.email
+      );
       return options;
     }, RATE_LIMITS.SETTINGS);
   });
@@ -85,7 +94,10 @@ export const verifyRegistrationAction = createServerAction()
 
       // Verify the email matches the logged-in user
       if (user.id !== session?.user?.id) {
-        throw new ZSAError("FORBIDDEN", "You can only register passkeys for your own account");
+        throw new ZSAError(
+          "FORBIDDEN",
+          "You can only register passkeys for your own account"
+        );
       }
 
       await verifyPasskeyRegistration({
@@ -112,10 +124,7 @@ export const deletePasskeyAction = createServerAction()
 
       // Prevent deletion of the current passkey
       if (session?.passkeyCredentialId === input.credentialId) {
-        throw new ZSAError(
-          "FORBIDDEN",
-          "Cannot delete the current passkey"
-        );
+        throw new ZSAError("FORBIDDEN", "Cannot delete the current passkey");
       }
 
       const db = getDB();
@@ -127,9 +136,9 @@ export const deletePasskeyAction = createServerAction()
         .where(eq(passKeyCredentialTable.userId, session?.user?.id ?? ""));
 
       // Get full user data to check password
-      const user = await db.query.userTable.findFirst({
+      const user = (await db.query.userTable.findFirst({
         where: eq(userTable.id, session?.user?.id ?? ""),
-      }) as User;
+      })) as User;
 
       // Check if this is the last passkey and if the user has a password
       if (passkeys.length === 1 && !user.passwordHash) {
@@ -157,9 +166,14 @@ export const generateAuthenticationOptionsAction = createServerAction()
   });
 
 const verifyAuthenticationSchema = z.object({
-  response: z.custom<AuthenticationResponseJSON>((val): val is AuthenticationResponseJSON => {
-    return typeof val === "object" && val !== null && "id" in val && "rawId" in val;
-  }, "Invalid authentication response"),
+  response: z.custom<AuthenticationResponseJSON>(
+    (val): val is AuthenticationResponseJSON => {
+      return (
+        typeof val === "object" && val !== null && "id" in val && "rawId" in val
+      );
+    },
+    "Invalid authentication response"
+  ),
   challenge: z.string(),
 });
 
@@ -167,13 +181,20 @@ export const verifyAuthenticationAction = createServerAction()
   .input(verifyAuthenticationSchema)
   .handler(async ({ input }) => {
     return withRateLimit(async () => {
-      const { verification, credential } = await verifyPasskeyAuthentication(input.response, input.challenge);
+      const { verification, credential } = await verifyPasskeyAuthentication(
+        input.response,
+        input.challenge
+      );
 
       if (!verification.verified) {
         throw new ZSAError("FORBIDDEN", "Passkey authentication failed");
       }
 
-      await createAndStoreSession(credential.userId, "passkey", input.response.id);
+      await createAndStoreSession(
+        credential.userId,
+        "passkey",
+        input.response.id
+      );
       return { success: true };
     }, RATE_LIMITS.SIGN_IN);
   });

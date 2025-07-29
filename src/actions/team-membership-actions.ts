@@ -1,9 +1,18 @@
 "use server";
 
-import { createServerAction, ZSAError } from "zsa";
 import { z } from "zod";
-import { acceptTeamInvitation, cancelTeamInvitation, getTeamInvitations, getTeamMembers, inviteUserToTeam, removeTeamMember, updateTeamMemberRole, getPendingInvitationsForCurrentUser } from "@/server/team-members";
-import { withRateLimit, RATE_LIMITS } from "@/utils/with-rate-limit";
+import { createServerAction, ZSAError } from "zsa";
+import {
+  acceptTeamInvitation,
+  cancelTeamInvitation,
+  getPendingInvitationsForCurrentUser,
+  getTeamInvitations,
+  getTeamMembers,
+  inviteUserToTeam,
+  removeTeamMember,
+  updateTeamMemberRole,
+} from "@/server/team-members";
+import { RATE_LIMITS, withRateLimit } from "@/utils/with-rate-limit";
 
 // Invite user schema
 const inviteUserSchema = z.object({
@@ -44,26 +53,20 @@ const invitationTokenSchema = z.object({
 export const inviteUserAction = createServerAction()
   .input(inviteUserSchema)
   .handler(async ({ input }) => {
-    return withRateLimit(
-      async () => {
-        try {
-          const result = await inviteUserToTeam(input);
-          return { success: true, data: result };
-        } catch (error) {
-          console.error("Failed to invite user:", error);
+    return withRateLimit(async () => {
+      try {
+        const result = await inviteUserToTeam(input);
+        return { success: true, data: result };
+      } catch (error) {
+        console.error("Failed to invite user:", error);
 
-          if (error instanceof ZSAError) {
-            throw error;
-          }
-
-          throw new ZSAError(
-            "INTERNAL_SERVER_ERROR",
-            "Failed to invite user"
-          );
+        if (error instanceof ZSAError) {
+          throw error;
         }
-      },
-      RATE_LIMITS.TEAM_INVITE
-    );
+
+        throw new ZSAError("INTERNAL_SERVER_ERROR", "Failed to invite user");
+      }
+    }, RATE_LIMITS.TEAM_INVITE);
   });
 
 /**
@@ -82,10 +85,7 @@ export const getTeamMembersAction = createServerAction()
         throw error;
       }
 
-      throw new ZSAError(
-        "INTERNAL_SERVER_ERROR",
-        "Failed to get team members"
-      );
+      throw new ZSAError("INTERNAL_SERVER_ERROR", "Failed to get team members");
     }
   });
 
@@ -207,8 +207,8 @@ export const acceptInvitationAction = createServerAction()
 /**
  * Get pending team invitations for the current user
  */
-export const getPendingInvitationsForCurrentUserAction = createServerAction()
-  .handler(async () => {
+export const getPendingInvitationsForCurrentUserAction =
+  createServerAction().handler(async () => {
     try {
       const invitations = await getPendingInvitationsForCurrentUser();
       return { success: true, data: invitations };

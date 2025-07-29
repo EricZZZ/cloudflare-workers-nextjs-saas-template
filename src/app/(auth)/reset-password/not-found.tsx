@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -6,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Link from "next/link";
 
 export default function ResetPasswordNotFound() {
   return (
@@ -15,18 +15,13 @@ export default function ResetPasswordNotFound() {
         <CardHeader>
           <CardTitle>Invalid Reset Link</CardTitle>
           <CardDescription>
-            This password reset link is invalid or has expired. Please request a new one.
+            This password reset link is invalid or has expired. Please request a
+            new one.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Button
-            variant="outline"
-            className="w-full"
-            asChild
-          >
-            <Link href="/forgot-password">
-              Request New Reset Link
-            </Link>
+          <Button variant="outline" className="w-full" asChild>
+            <Link href="/forgot-password">Request New Reset Link</Link>
           </Button>
         </CardContent>
       </Card>

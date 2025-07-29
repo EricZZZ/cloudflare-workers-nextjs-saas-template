@@ -46,13 +46,18 @@ interface VerifyPasswordParams {
   passwordAttempt: string;
 }
 
-async function verifyPassword({ storedHash, passwordAttempt }: VerifyPasswordParams) {
+async function verifyPassword({
+  storedHash,
+  passwordAttempt,
+}: VerifyPasswordParams) {
   const [saltHex, originalHash] = storedHash.split(":");
-  const salt = new Uint8Array(saltHex.match(/.{1,2}/g)!.map((byte: string) => parseInt(byte, 16)));
+  const salt = new Uint8Array(
+    saltHex.match(/.{1,2}/g)?.map((byte: string) => parseInt(byte, 16))
+  );
 
   const attemptHashWithSalt = await hashPassword({
     password: passwordAttempt,
-    providedSalt: salt
+    providedSalt: salt,
   });
   const [, attemptHash] = attemptHashWithSalt.split(":");
 

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from "react";
-import { Button } from "./ui/button";
+import { ChevronLeft, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import AgenticDevStudioLogo from "./agenticdev-studio-logo";
-import { ChevronLeft, X } from "lucide-react";
+import { Button } from "./ui/button";
 
-const STORAGE_KEY = 'agenticdev-studio-banner-collapsed';
+const STORAGE_KEY = "agenticdev-studio-banner-collapsed";
 
 export function AgenticDevStudioStickyBanner() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -38,7 +38,9 @@ export function AgenticDevStudioStickyBanner() {
       <div
         className={cn(
           "transition-all duration-300 ease-in-out transform",
-          isCollapsed ? "translate-x-[calc(100%+1rem)] md:translate-x-[calc(100%+1rem)]" : "translate-x-0"
+          isCollapsed
+            ? "translate-x-[calc(100%+1rem)] md:translate-x-[calc(100%+1rem)]"
+            : "translate-x-0"
         )}
       >
         <div className="relative flex items-center w-[90vw] md:max-w-[400px]">
@@ -69,6 +71,7 @@ export function AgenticDevStudioStickyBanner() {
                 href="https://agenticdev.agency?ref=saas-template-sticky-banner"
                 target="_blank"
                 className="flex flex-col items-center font-medium text-sm hover:text-foreground transition-colors"
+                rel="noopener"
               >
                 <div className="flex items-center">
                   <span className="whitespace-nowrap">Built by</span>
@@ -77,11 +80,21 @@ export function AgenticDevStudioStickyBanner() {
                 </div>
 
                 <div className="text-tiny text-muted-foreground mt-3">
-                Transform operations with AI solutions that adapt to your actual needs—automating routine tasks or solving complex challenges through customized systems. Focus on growth while we handle the tech specifics that matter most to your business.
+                  Transform operations with AI solutions that adapt to your
+                  actual needs—automating routine tasks or solving complex
+                  challenges through customized systems. Focus on growth while
+                  we handle the tech specifics that matter most to your
+                  business.
                 </div>
               </a>
               <Button size="sm" className="mt-4" asChild>
-                <a href="https://agenticdev.agency?ref=saas-template-sticky-banner" target="_blank">Book a free consultation</a>
+                <a
+                  href="https://agenticdev.agency?ref=saas-template-sticky-banner"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Book a free consultation
+                </a>
               </Button>
             </div>
           </div>

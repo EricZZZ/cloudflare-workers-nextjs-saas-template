@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import { getSessionFromCookie } from "@/utils/auth";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { getSessionFromCookie } from "@/utils/auth";
 import TeamInviteClientComponent from "./team-invite.client";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default async function TeamInvitePage({
 
   // If no token is provided, redirect to sign in
   if (!token) {
-    return redirect('/sign-in');
+    return redirect("/sign-in");
   }
 
   // If user is not logged in, redirect to sign in with return URL

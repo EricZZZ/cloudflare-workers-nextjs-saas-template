@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import { getSessionFromCookie } from "@/utils/auth";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import VerifyEmailClientComponent from "./verify-email.client";
 import { REDIRECT_AFTER_SIGN_IN } from "@/constants";
+import { getSessionFromCookie } from "@/utils/auth";
+import VerifyEmailClientComponent from "./verify-email.client";
 
 export const metadata: Metadata = {
   title: "Verify Email",
@@ -22,7 +22,7 @@ export default async function VerifyEmailPage({
   }
 
   if (!token) {
-    return redirect('/sign-in');
+    return redirect("/sign-in");
   }
 
   return <VerifyEmailClientComponent />;

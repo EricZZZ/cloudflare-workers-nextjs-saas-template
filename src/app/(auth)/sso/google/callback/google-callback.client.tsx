@@ -1,15 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { toast } from "sonner";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { useServerAction } from "zsa-react";
-import { googleSSOCallbackAction } from "./google-callback.action";
-import { googleSSOCallbackSchema } from "@/schemas/google-sso-callback.schema";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { REDIRECT_AFTER_SIGN_IN } from "@/constants";
+import { googleSSOCallbackSchema } from "@/schemas/google-sso-callback.schema";
+import { googleSSOCallbackAction } from "./google-callback.action";
 
 export default function GoogleCallbackClientComponent() {
   const router = useRouter();
@@ -18,7 +24,11 @@ export default function GoogleCallbackClientComponent() {
   const state = searchParams.get("state");
   const hasCalledCallback = useRef(false);
 
-  const { execute: handleCallback, isPending, error } = useServerAction(googleSSOCallbackAction, {
+  const {
+    execute: handleCallback,
+    isPending,
+    error,
+  } = useServerAction(googleSSOCallbackAction, {
     onError: (error) => {
       toast.dismiss();
       toast.error(error.err?.message || "Failed to sign in with Google");
@@ -45,7 +55,7 @@ export default function GoogleCallbackClientComponent() {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [code, state]);
+  }, [code, state, handleCallback, router.push]);
 
   if (isPending) {
     return (
@@ -95,7 +105,8 @@ export default function GoogleCallbackClientComponent() {
         <CardHeader>
           <CardTitle>Invalid callback</CardTitle>
           <CardDescription>
-            The sign in callback is invalid or has expired. Please try signing in again.
+            The sign in callback is invalid or has expired. Please try signing
+            in again.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -111,4 +122,3 @@ export default function GoogleCallbackClientComponent() {
     </div>
   );
 }
-

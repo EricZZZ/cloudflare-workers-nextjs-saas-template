@@ -1,30 +1,25 @@
 "use client";
 
+import { ScrollShadow } from "@heroui/react";
+import { Lock, LogOut, Smartphone, User } from "lucide-react";
+import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { ScrollShadow } from '@heroui/react'
-import {
-  User,
-  Smartphone,
-  Lock,
-  LogOut
-} from "lucide-react";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useRef } from "react";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { useRef } from "react";
-import type { Route } from "next";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import useSignOut from "@/hooks/useSignOut";
+import { cn } from "@/lib/utils";
 
 interface SidebarNavItem {
   title: string;
@@ -57,7 +52,7 @@ const sidebarNavItems: SidebarNavItem[] = [
 
 export function SettingsSidebar() {
   const pathname = usePathname();
-  const isLgAndSmaller = useMediaQuery('LG_AND_SMALLER')
+  const isLgAndSmaller = useMediaQuery("LG_AND_SMALLER");
   const dialogCloseRef = useRef<HTMLButtonElement>(null);
   const { signOut } = useSignOut();
 

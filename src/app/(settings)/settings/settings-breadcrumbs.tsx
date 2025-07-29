@@ -1,5 +1,6 @@
 "use client";
 
+import { useSelectedLayoutSegment } from "next/navigation";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,12 +9,13 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { useSelectedLayoutSegment } from "next/navigation";
 import { capitalize } from "@/utils/text";
 
 export function SettingsBreadcrumbs() {
   const segment = useSelectedLayoutSegment();
-  const pageTitle = segment ? capitalize(segment.replace(/-/g, ' ')) : 'Overview';
+  const pageTitle = segment
+    ? capitalize(segment.replace(/-/g, " "))
+    : "Overview";
 
   return (
     <Breadcrumb>
