@@ -11,7 +11,7 @@ import { useServerAction } from "zsa-react";
 import {
   generateAuthenticationOptionsAction,
   verifyAuthenticationAction,
-} from "@/app/(settings)/settings/security/passkey-settings.actions";
+} from "@/app/[locale]/settings/security/passkey-settings.actions";
 import SeparatorWithText from "@/components/separator-with-text";
 import { Button } from "@/components/ui/button";
 import {

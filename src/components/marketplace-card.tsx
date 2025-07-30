@@ -1,6 +1,6 @@
 "use client";
 
-import { COMPONENTS } from "@/app/(dashboard)/dashboard/marketplace/components-catalog";
+import { COMPONENTS } from "@/app/[locale]/dashboard/marketplace/components-catalog";
 import PurchaseButton from "@/components/purchase-button";
 import { Badge } from "@/components/ui/badge";
 import {

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
-import { purchaseAction } from "@/app/(dashboard)/dashboard/marketplace/purchase.action";
+import { purchaseAction } from "@/app/[locale]/dashboard/marketplace/purchase.action";
 import ShinyButton from "@/components/ui/shiny-button";
 import type { PURCHASABLE_ITEM_TYPE } from "@/db/schema";
 

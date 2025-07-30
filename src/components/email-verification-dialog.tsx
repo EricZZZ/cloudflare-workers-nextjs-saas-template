@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
-import { resendVerificationAction } from "@/app/(auth)/resend-verification.action";
+import { resendVerificationAction } from "@/app/[locale]/(auth)/resend-verification.action";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,

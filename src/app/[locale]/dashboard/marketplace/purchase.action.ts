@@ -3,7 +3,7 @@
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 import { createServerAction, ZSAError } from "zsa";
-import { COMPONENTS } from "@/app/(dashboard)/dashboard/marketplace/components-catalog";
+import { COMPONENTS } from "@/app/[locale]/dashboard/marketplace/components-catalog";
 import { getDB } from "@/db";
 import { PURCHASABLE_ITEM_TYPE, purchasedItemsTable } from "@/db/schema";
 import { getSessionFromCookie } from "@/utils/auth";
