@@ -1,6 +1,5 @@
 import { Alert } from "@heroui/react";
 import { eq } from "drizzle-orm";
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { PageHeader } from "@/components/page-header";
 import { InviteMemberModal } from "@/components/teams/invite-member-modal";
@@ -17,6 +16,7 @@ import {
 } from "@/components/ui/table";
 import { getDB } from "@/db";
 import { TEAM_PERMISSIONS, teamTable } from "@/db/schema";
+import { Link } from "@/i18n/navigation";
 import { getTeamMembers } from "@/server/team-members";
 import { getSessionFromCookie } from "@/utils/auth";
 import { formatDate } from "@/utils/format-date";

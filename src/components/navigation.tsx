@@ -1,8 +1,8 @@
 "use client";
 
 import { ComponentIcon, Menu } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Skeleton } from "@/components/ui/skeleton";

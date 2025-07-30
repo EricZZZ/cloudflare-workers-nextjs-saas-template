@@ -2,8 +2,6 @@
 
 import { ScrollShadow } from "@heroui/react";
 import { Lock, LogOut, Smartphone, User } from "lucide-react";
-import type { Route } from "next";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -19,11 +17,12 @@ import {
 } from "@/components/ui/dialog";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import useSignOut from "@/hooks/useSignOut";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 interface SidebarNavItem {
   title: string;
-  href: Route;
+  href: string;
   icon: React.ComponentType<{ className?: string }>;
 }
 

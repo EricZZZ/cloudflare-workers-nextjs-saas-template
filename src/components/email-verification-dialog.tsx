@@ -20,14 +20,14 @@ import { useSessionStore } from "@/state/session";
 import isProd from "@/utils/is-prod";
 
 const pagesToBypass: Route[] = [
-  "/verify-email",
-  "/sign-in",
-  "/sign-up",
-  "/",
-  "/privacy",
-  "/terms",
-  "/reset-password",
-  "/forgot-password",
+  "/verify-email" as Route,
+  "/sign-in" as Route,
+  "/sign-up" as Route,
+  "/" as Route,
+  "/privacy" as Route,
+  "/terms" as Route,
+  "/reset-password" as Route,
+  "/forgot-password" as Route,
 ];
 
 export function EmailVerificationDialog() {

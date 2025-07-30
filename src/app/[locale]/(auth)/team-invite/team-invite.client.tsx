@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { useServerAction } from "zsa-react";
@@ -13,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
+import { useRouter } from "@/i18n/navigation";
 import { teamInviteSchema } from "@/schemas/team-invite.schema";
 import { acceptTeamInviteAction } from "./team-invite.action";
 

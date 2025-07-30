@@ -84,7 +84,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     navMain: [
       {
         title: "Dashboard",
-        url: "/dashboard",
+        url: "/dashboard" as Route,
         icon: SquareTerminal,
         isActive: true,
       },
@@ -95,34 +95,34 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
       {
         title: "Marketplace",
-        url: "/dashboard/marketplace",
+        url: "/dashboard/marketplace" as Route,
         icon: ShoppingCart,
       },
       {
         title: "Billing",
-        url: "/dashboard/billing",
+        url: "/dashboard/billing" as Route,
         icon: CreditCard,
       },
       {
         title: "Settings",
-        url: "/settings",
+        url: "/settings" as Route,
         icon: Settings2,
         items: [
           {
             title: "Profile",
-            url: "/settings",
+            url: "/settings" as Route,
           },
           {
             title: "Security",
-            url: "/settings/security",
+            url: "/settings/security" as Route,
           },
           {
             title: "Sessions",
-            url: "/settings/sessions",
+            url: "/settings/sessions" as Route,
           },
           {
             title: "Change Password",
-            url: "/forgot-password",
+            url: "/forgot-password" as Route,
           },
         ],
       },

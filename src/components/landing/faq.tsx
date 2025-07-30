@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import {
   Accordion,
   AccordionContent,
@@ -5,7 +6,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { GITHUB_REPO_URL } from "@/constants";
-import { getTranslations } from "next-intl/server";
 
 async function getFAQs(t: any) {
   return [
@@ -123,7 +123,11 @@ async function getFAQs(t: any) {
         <>
           {t("Answer7").split("pnpm email:dev")[0]}
           <code>pnpm email:dev</code>
-          {t("Answer7").split("http://localhost:3001")[0].split("pnpm email:dev")[1]}
+          {
+            t("Answer7")
+              .split("http://localhost:3001")[0]
+              .split("pnpm email:dev")[1]
+          }
           <a href="http://localhost:3001" target="_blank" rel="noopener">
             http://localhost:3001
           </a>
@@ -148,9 +152,17 @@ async function getFAQs(t: any) {
               {t("CustomizationSteps.Docs").split("./cursor-docs")[1]}
             </li>
             <li>
-              {t("CustomizationSteps.Footer").split("src/components/footer.tsx")[0]}
+              {
+                t("CustomizationSteps.Footer").split(
+                  "src/components/footer.tsx"
+                )[0]
+              }
               <code>src/components/footer.tsx</code>
-              {t("CustomizationSteps.Footer").split("src/components/footer.tsx")[1]}
+              {
+                t("CustomizationSteps.Footer").split(
+                  "src/components/footer.tsx"
+                )[1]
+              }
             </li>
             <li>
               {t("CustomizationSteps.Colors").split("src/app/globals.css")[0]}

@@ -7,6 +7,7 @@ import {
   CreditCard,
   LogOut,
 } from "lucide-react";
+import type { Route } from "next";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -92,7 +93,7 @@ export function NavUser() {
                   className="w-fit text-[10px]"
                   onClick={() => {
                     setOpenMobile(false);
-                    router.push("/dashboard/billing");
+                    router.push("/dashboard/billing" as Route);
                   }}
                 >
                   {user.currentCredits} credits
@@ -145,7 +146,7 @@ export function NavUser() {
                 className="cursor-pointer"
                 onClick={() => {
                   setOpenMobile(false);
-                  router.push("/dashboard/billing");
+                  router.push("/dashboard/billing" as Route);
                 }}
               >
                 <CreditCard />
@@ -161,7 +162,7 @@ export function NavUser() {
               onClick={() => {
                 setOpenMobile(false);
                 signOut().then(() => {
-                  router.push("/");
+                  router.push("/" as Route);
                 });
               }}
               className="cursor-pointer"
