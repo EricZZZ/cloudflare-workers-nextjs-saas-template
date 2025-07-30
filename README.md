@@ -121,9 +121,23 @@ Have a look at the [project plan](./cursor-docs/project-plan.md) to get an overv
 - [ ] Dynamic OpenGraph images 📸
 - [ ] sitemap.xml 📄
 - [ ] robots.txt 📄
-- [ ] Multi-language support (i18n) 🌐
+- [x] Multi-language support (i18n) 🌐
 - [ ] Notifications 🔔
 - [ ] Webhooks 🔗
+
+### Translation Pages Progress
+| Page        | en  | zh  | ja  |
+| ----------- | --- | --- | --- |
+| Home        | ✅   | ✅   | ✅   |
+| Legal       | ✅   | ✅   | ✅   |
+| SignUp      | ✅   | ❌   | ❌   |
+| SignIn      | ✅   | ❌   | ❌   |
+| Dashboard   | ✅   | ❌   | ❌   |
+| Settings    | ✅   | ❌   | ❌   |
+| Teams       | ✅   | ❌   | ❌   |
+| Marketplace | ✅   | ❌   | ❌   |
+| Billing     | ✅   | ❌   | ❌   |
+| OpenMenu    | ✅   | ❌   | ❌   |
 
 # Running it locally
 

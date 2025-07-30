@@ -1,10 +1,29 @@
 {
+  "Navigation": {
+    "Home": "Home",
+    "Settings": "Settings",
+    "Dashboard": "Dashboard",
+    "SignIn": "Sign In",
+    "OpenMenu": "Open menu"
+  },
+  "Footer": {
+    "Legal": "Legal",
+    "TermsOfService": "Terms of Service",
+    "PrivacyPolicy": "Privacy Policy",
+    "Company": "Company",
+    "Home": "Home",
+    "Social": "Social",
+    "AllRightsReserved": "All rights reserved.",
+    "ForkOnGithub": "Fork on Github",
+    "ForkOnGithubWithStars": "Fork on Github ({stars} Stars)"
+  },
   "Hero": {
     "HeroTitle": "Production-Ready SaaS Template for Next.js",
     "HeroDescription": "A modern, open-source template for building SaaS applications with Next.js 15, Cloudflare Workers, and everything you need to launch quickly.",
     "ViewOnGitHub": "View on GitHub",
     "TryDemo": "Try Demo",
-    "FreeOpenSource": "100% Free & Open Source"
+    "FreeOpenSource": "100% Free & Open Source",
+    "Users": "Users & Growing"
   },
   "Features": {
     "SectionSubtitle": "Production Ready",

@@ -1,25 +1,26 @@
 "use client";
 
 import { ComponentIcon, Menu } from "lucide-react";
-import type { Route } from "next";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Skeleton } from "@/components/ui/skeleton";
 import { SITE_NAME } from "@/constants";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { useNavStore } from "@/state/nav";
 import { useSessionStore } from "@/state/session";
 
 type NavItem = {
   name: string;
-  href: Route;
+  href: string;
 };
 
 const ActionButtons = () => {
   const { session, isLoading } = useSessionStore();
   const { setIsOpen } = useNavStore();
+  const t = useTranslations("Navigation");
 
   if (isLoading) {
     return <Skeleton className="h-10 w-[80px] bg-primary" />;
@@ -31,7 +32,7 @@ const ActionButtons = () => {
 
   return (
     <Button asChild onClick={() => setIsOpen(false)}>
-      <Link href="/sign-in">Sign In</Link>
+      <Link href="/sign-in">{t("SignIn")}</Link>
     </Button>
   );
 };
@@ -40,13 +41,14 @@ export function Navigation() {
   const { session, isLoading } = useSessionStore();
   const { isOpen, setIsOpen } = useNavStore();
   const pathname = usePathname();
+  const t = useTranslations("Navigation");
 
   const navItems: NavItem[] = [
-    { name: "Home", href: "/" },
+    { name: t("Home"), href: "/" },
     ...(session
       ? ([
-          { name: "Settings", href: "/settings" },
-          { name: "Dashboard", href: "/dashboard" },
+          { name: t("Settings"), href: "/settings" },
+          { name: t("Dashboard"), href: "/dashboard" },
         ] as NavItem[])
       : []),
   ];
@@ -102,7 +104,7 @@ export function Navigation() {
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="p-6">
                   <Menu className="w-9 h-9" />
-                  <span className="sr-only">Open menu</span>
+                  <span className="sr-only">{t("OpenMenu")}</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[240px] sm:w-[300px]">

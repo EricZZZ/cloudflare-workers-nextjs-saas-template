@@ -1,13 +1,16 @@
 import { SiGithub as GithubIcon } from "@icons-pack/react-simple-icons";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Suspense } from "react";
 import LanguageSwitch from "@/components/language-switch";
 import ThemeSwitch from "@/components/theme-switch";
 import { GITHUB_REPO_URL, SITE_NAME } from "@/constants";
+import { Link } from "@/i18n/navigation";
 import { getGithubStars } from "@/utils/stats";
 import { Button } from "./ui/button";
 
 export function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer className="border-t dark:bg-muted/30 bg-muted/60 shadow">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -17,7 +20,7 @@ export function Footer() {
             {/* Legal Links */}
             <div className="space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
               <h3 className="text-sm font-semibold text-foreground text-center md:text-left">
-                Legal
+                {t("Legal")}
               </h3>
               <ul className="space-y-2 flex flex-col items-center md:items-start">
                 <li>
@@ -25,7 +28,7 @@ export function Footer() {
                     href="/terms"
                     className="text-sm text-muted-foreground hover:text-foreground text-center md:text-left"
                   >
-                    Terms of Service
+                    {t("TermsOfService")}
                   </Link>
                 </li>
                 <li>
@@ -33,7 +36,7 @@ export function Footer() {
                     href="/privacy"
                     className="text-sm text-muted-foreground hover:text-foreground text-center md:text-left"
                   >
-                    Privacy Policy
+                    {t("PrivacyPolicy")}
                   </Link>
                 </li>
               </ul>
@@ -42,7 +45,7 @@ export function Footer() {
             {/* Company Info */}
             <div className="space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
               <h3 className="text-sm font-semibold text-foreground text-center md:text-left">
-                Company
+                {t("Company")}
               </h3>
               <ul className="space-y-2 flex flex-col items-center md:items-start">
                 <li>
@@ -50,7 +53,7 @@ export function Footer() {
                     href="/"
                     className="text-sm text-muted-foreground hover:text-foreground text-center md:text-left"
                   >
-                    Home
+                    {t("Home")}
                   </Link>
                 </li>
               </ul>
@@ -59,7 +62,7 @@ export function Footer() {
             {/* Social Links and Theme Switch */}
             <div className="space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
               <h3 className="text-sm font-semibold text-foreground text-center md:text-left">
-                Social
+                {t("Social")}
               </h3>
               <div className="flex items-center space-x-4">
                 <a
@@ -71,15 +74,6 @@ export function Footer() {
                   <GithubIcon className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </a>
-                {/* <a
-                  href="https://x.com/EricZZZ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <XIcon className="h-5 w-5" />
-                  <span className="sr-only">X (formerly Twitter)</span>
-                </a> */}
               </div>
             </div>
           </div>
@@ -88,7 +82,8 @@ export function Footer() {
           <div className="mt-6 pt-6 md:mt-8 md:pt-8 border-t">
             <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between md:gap-4">
               <p className="text-sm text-muted-foreground text-center md:text-left">
-                © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+                © {new Date().getFullYear()} {SITE_NAME}.{" "}
+                {t("AllRightsReserved")}
               </p>
 
               <div className="flex flex-col md:flex-row items-center gap-4 md:space-x-4">
@@ -113,6 +108,7 @@ export function Footer() {
 
 // This component will be wrapped in Suspense
 async function GithubButton() {
+  const t = useTranslations("Footer");
   const starsCount = await getGithubStars();
 
   return (
@@ -131,8 +127,8 @@ async function GithubButton() {
         <GithubIcon className="h-4 w-4" />
         <span className="whitespace-nowrap">
           {starsCount
-            ? `Fork on Github (${starsCount} Stars)`
-            : "Fork on Github"}
+            ? t("ForkOnGithubWithStars", { stars: starsCount })
+            : t("ForkOnGithub")}
         </span>
       </a>
     </Button>
@@ -141,6 +137,8 @@ async function GithubButton() {
 
 // Fallback while loading stars count
 function GithubButtonFallback() {
+  const t = useTranslations("Footer");
+
   return (
     <Button
       variant="outline"
@@ -155,7 +153,7 @@ function GithubButtonFallback() {
         className="flex items-center justify-center space-x-2"
       >
         <GithubIcon className="h-4 w-4" />
-        <span className="whitespace-nowrap">Fork on Github</span>
+        <span className="whitespace-nowrap">{t("ForkOnGithub")}</span>
       </a>
     </Button>
   );

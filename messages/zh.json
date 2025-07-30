@@ -1,10 +1,29 @@
 {
+  "Navigation": {
+    "Home": "首页",
+    "Settings": "设置",
+    "Dashboard": "仪表板",
+    "SignIn": "登录",
+    "OpenMenu": "打开菜单"
+  },
+  "Footer": {
+    "Legal": "法律",
+    "TermsOfService": "服务条款",
+    "PrivacyPolicy": "隐私政策",
+    "Company": "公司",
+    "Home": "首页",
+    "Social": "社交",
+    "AllRightsReserved": "版权所有。",
+    "ForkOnGithub": "在 Github 上 Fork",
+    "ForkOnGithubWithStars": "在 Github 上 Fork（{stars} 星标）"
+  },
   "Hero": {
     "HeroTitle": "生产就绪的 Next.js SaaS 模板",
     "HeroDescription": "一个现代化的开源模板，用于构建基于 Next.js 15、Cloudflare Workers 的 SaaS 应用程序，包含快速启动所需的一切。",
     "ViewOnGitHub": "在 GitHub 上查看",
     "TryDemo": "试用演示",
-    "FreeOpenSource": "100% 免费开源"
+    "FreeOpenSource": "100% 免费开源",
+    "Users": "用户 & 增长中"
   },
   "Features": {
     "SectionSubtitle": "生产就绪",

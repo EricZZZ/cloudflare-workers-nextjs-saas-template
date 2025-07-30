@@ -49,13 +49,14 @@ export async function Hero() {
 
 // This component will be wrapped in Suspense
 async function TotalUsersButton() {
+  const t = await getTranslations("Hero");
   const totalUsers = await getTotalUsers();
 
   if (!totalUsers) return null;
 
   return (
     <ShinyButton className="rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 ring-1 ring-inset ring-purple-500/20">
-      {totalUsers} Users & Growing
+      {totalUsers} {t("Users")}
     </ShinyButton>
   );
 }

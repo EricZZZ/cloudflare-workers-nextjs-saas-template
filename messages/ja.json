@@ -1,10 +1,29 @@
 {
+  "Navigation": {
+    "Home": "ホーム",
+    "Settings": "設定",
+    "Dashboard": "ダッシュボード",
+    "SignIn": "サインイン",
+    "OpenMenu": "メニューを開く"
+  },
+  "Footer": {
+    "Legal": "法的事項",
+    "TermsOfService": "利用規約",
+    "PrivacyPolicy": "プライバシーポリシー",
+    "Company": "会社",
+    "Home": "ホーム",
+    "Social": "ソーシャル",
+    "AllRightsReserved": "全著作権所有。",
+    "ForkOnGithub": "Github でフォーク",
+    "ForkOnGithubWithStars": "Github でフォーク（{stars} スター）"
+  },
   "Hero": {
     "HeroTitle": "本番対応 Next.js SaaS テンプレート",
     "HeroDescription": "Next.js 15、Cloudflare Workers を使用した SaaS アプリケーション構築のためのモダンなオープンソーステンプレート。迅速な立ち上げに必要なすべてが含まれています。",
     "ViewOnGitHub": "GitHub で表示",
     "TryDemo": "デモを試す",
-    "FreeOpenSource": "100% 無料オープンソース"
+    "FreeOpenSource": "100% 無料オープンソース",
+    "Users": "ユーザー & 成長中"
   },
   "Features": {
     "SectionSubtitle": "本番対応",
