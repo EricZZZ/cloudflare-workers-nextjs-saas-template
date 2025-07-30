@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "custom-env.d.ts"
+    "custom-env.d.ts",
+    "src/app/layout.bak"
   ],
   "exclude": ["node_modules"]
 }

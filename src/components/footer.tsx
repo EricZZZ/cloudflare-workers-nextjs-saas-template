@@ -1,10 +1,10 @@
 import { SiGithub as GithubIcon } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 import { Suspense } from "react";
+import LanguageSwitch from "@/components/language-switch";
 import ThemeSwitch from "@/components/theme-switch";
 import { GITHUB_REPO_URL, SITE_NAME } from "@/constants";
 import { getGithubStars } from "@/utils/stats";
-import AgenticDevStudioLogo from "./agenticdev-studio-logo";
 import { Button } from "./ui/button";
 
 export function Footer() {
@@ -100,17 +100,7 @@ export function Footer() {
 
                 <div className="flex items-center gap-4">
                   <ThemeSwitch />
-
-                  <a
-                    href="https://agenticdev.agency"
-                    target="_blank"
-                    className="flex items-center font-medium text-sm hover:text-foreground transition-colors"
-                    rel="noopener"
-                  >
-                    <span className="whitespace-nowrap">Built by</span>
-                    <AgenticDevStudioLogo className="h-7 w-7 mx-1.5" />
-                    <span className="whitespace-nowrap">AgenticDev</span>
-                  </a>
+                  <LanguageSwitch />
                 </div>
               </div>
             </div>

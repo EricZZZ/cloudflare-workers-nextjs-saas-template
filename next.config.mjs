@@ -1,5 +1,9 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
+
 
 // added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
 initOpenNextCloudflareForDev();
@@ -20,5 +24,5 @@ const nextConfig = {
 };
 
 export default process.env.ANALYZE === 'true'
-  ? withBundleAnalyzer()(nextConfig)
-  : nextConfig;
+  ? withBundleAnalyzer()(withNextIntl(nextConfig))
+  : withNextIntl(nextConfig);

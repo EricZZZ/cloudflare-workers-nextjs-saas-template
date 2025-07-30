@@ -60,11 +60,13 @@ export const metadata: Metadata = {
 
 export default function BaseLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <NextTopLoader
           initialPosition={0.15}

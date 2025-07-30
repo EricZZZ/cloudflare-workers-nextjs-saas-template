@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import ShinyButton from "@/components/ui/shiny-button";
@@ -6,7 +7,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { GITHUB_REPO_URL } from "@/constants";
 import { getTotalUsers } from "@/utils/stats";
 
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("Index");
   return (
     <div className="relative isolate pt-14 dark:bg-gray-900">
       <div className="pt-20 pb-24 sm:pt-20 sm:pb-32 lg:pb-40">
@@ -21,7 +23,7 @@ export function Hero() {
               </Suspense>
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-              Production-Ready SaaS Template
+              {t("HeroTitle")}
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               A modern, open-source template for building SaaS applications with
