@@ -1,5 +1,158 @@
 {
-  "Index": {
-    "HeroTitle": "本番対応 Next.js SaaS テンプレート"
+  "Hero": {
+    "HeroTitle": "本番対応 Next.js SaaS テンプレート",
+    "HeroDescription": "Next.js 15、Cloudflare Workers を使用した SaaS アプリケーション構築のためのモダンなオープンソーステンプレート。迅速な立ち上げに必要なすべてが含まれています。",
+    "ViewOnGitHub": "GitHub で表示",
+    "TryDemo": "デモを試す",
+    "FreeOpenSource": "100% 無料オープンソース"
+  },
+  "Features": {
+    "SectionSubtitle": "本番対応",
+    "SectionTitle": "SaaS 構築に必要なすべて",
+    "SectionDescription": "完全な基盤から始めましょう。すべての必須機能が組み込まれているため、あなたの SaaS を独自のものにすることに集中できます。",
+    "AuthenticationReady": {
+      "name": "認証システム対応",
+      "description": "Lucia Auth を使用したメール/パスワードサインイン、サインアップ、パスワード忘れフロー、セッション管理を含む完全な認証システム。"
+    },
+    "DatabaseEmail": {
+      "name": "データベース & メール",
+      "description": "データベースには Drizzle ORM と Cloudflare D1、美しいメールテンプレートには React Email と Resend を使用。"
+    },
+    "ModernStack": {
+      "name": "モダンスタック",
+      "description": "React Server Components、Server Actions、Edge Runtime を備えた Next.js 15 App Router で最適なパフォーマンスを実現。"
+    },
+    "BeautifulUI": {
+      "name": "美しい UI",
+      "description": "Tailwind CSS、Shadcn UI コンポーネントによる洗練された UI、ダーク/ライトモード、レスポンシブデザインを標準搭載。"
+    },
+    "EdgeDeployment": {
+      "name": "エッジデプロイメント",
+      "description": "Cloudflare Workers でグローバルデプロイ、コールドスタートゼロ、Cloudflare のエッジネットワークで超高速パフォーマンスを実現。"
+    },
+    "DeveloperExperience": {
+      "name": "開発者体験",
+      "description": "GitHub Actions によるデプロイメント、包括的なドキュメント、TypeScript による型安全性。"
+    },
+    "FormHandling": {
+      "name": "フォーム処理",
+      "description": "Zod と React Hook Form による組み込みフォームバリデーションで、スムーズなユーザー体験を提供。"
+    },
+    "TeamReady": {
+      "name": "チーム対応",
+      "description": "コラボレーションを念頭に構築。チームの要件に合わせて簡単にカスタマイズ・拡張可能。"
+    }
+  },
+  "FAQ": {
+    "SectionTitle": "よくある質問",
+    "Question1": "このテンプレートは本当に無料ですか？",
+    "Answer1": "はい、このテンプレートは完全に無料でオープンソースです！個人・商用プロジェクトの両方でライセンス料なしで使用できます。制限や帰属表示なしに自由にフォーク、コピー、修正、配布できます。",
+    "Question2": "どのような機能が含まれていますか？",
+    "Answer2": "テンプレートには包括的な機能セットが含まれています：",
+    "Features": {
+      "Authentication": "メール/パスワード認証とパスワード忘れフロー",
+      "Database": "Drizzle ORMとCloudflare D1データベース統合",
+      "Email": "React EmailとResendによるメールサービス",
+      "UI": "Shadcn UIとTailwind CSSのモダンUIコンポーネント",
+      "Forms": "フォーム検証とエラーハンドリング",
+      "DarkMode": "ダークモードサポート",
+      "Responsive": "レスポンシブデザイン",
+      "TypeScript": "コードベース全体でのTypeScript",
+      "Deployment": "GitHub Actionsによる自動デプロイ",
+      "Captcha": "Turnstile CAPTCHA統合",
+      "SEO": "Next.js SEO最適化",
+      "More": "その他数え切れない機能..."
+    },
+    "Question3": "技術スタックは何ですか？",
+    "Answer3": "テンプレートはモダンで信頼性の高い技術を使用しています：",
+    "TechStack": {
+      "NextJS": "App RouterとReact Server ComponentsのNext.js 15",
+      "TypeScript": "型安全性のためのTypeScript",
+      "Styling": "スタイリングのためのTailwind CSSとShadcn UI",
+      "Database": "データベースのためのDrizzleORMとCloudflare D1",
+      "Auth": "認証のためのLucia Auth",
+      "Workers": "サーバーレスデプロイのためのCloudflare Workers",
+      "KV": "セッションストレージのためのCloudflare KV",
+      "Email": "美しいメールテンプレートのためのReact Email"
+    },
+    "Question4": "アプリケーションをデプロイするにはどうすればよいですか？",
+    "Answer4": "デプロイはGitHub Actionsで自動化されています。必要な作業：",
+    "DeploymentSteps": {
+      "Step1": "Cloudflare D1とKV名前空間を作成",
+      "Step2": "メールサービスのためのResendセットアップ",
+      "Step3": "CAPTCHAのためのTurnstile設定",
+      "Step4": "CloudflareAPIトークンをGitHubシークレットに追加",
+      "Step5": "メインブランチにプッシュ"
+    },
+    "DeploymentNote": "デプロイプロセスはGitHubリポジトリで完全に文書化されています。",
+    "Question5": "始めるために何が必要ですか？",
+    "Answer5": "Cloudflareアカウント（無料プランで十分）、ローカルにインストールされたNode.js、ReactとTypeScriptの基本知識が必要です。テンプレートにはセットアップをガイドする詳細なドキュメントが含まれています。",
+    "Answer5Note": "詳細については、ドキュメントもご確認ください。",
+    "Question6": "今後の機能は何ですか？",
+    "Answer6": "エキサイティングなロードマップがあります！予定されている機能：",
+    "UpcomingFeatures": {
+      "I18n": "多言語サポート（i18n）",
+      "Billing": "請求と支払い処理",
+      "Admin": "管理者ダッシュボード",
+      "EmailVerification": "サインアップ時のメール認証",
+      "Notifications": "通知システム",
+      "Webhooks": "Webhooksサポート",
+      "Team": "チームコラボレーション機能",
+      "Realtime": "リアルタイム更新",
+      "Analytics": "分析ダッシュボード"
+    },
+    "Question7": "メールテンプレートをプレビューできますか？",
+    "Answer7": "はい！pnpm email:devを実行してhttp://localhost:3001を開くと、メールテンプレートをプレビューおよび編集できます。優れた開発体験のためにReact Emailで構築されています。",
+    "Question8": "テンプレートをカスタマイズするにはどうすればよいですか？",
+    "Answer8": "本番環境にデプロイする前に、以下を行う必要があります：",
+    "CustomizationSteps": {
+      "Constants": "src/constants.tsでプロジェクト詳細を更新",
+      "Docs": "./cursor-docsでドキュメントをカスタマイズ",
+      "Footer": "src/components/footer.tsxでフッターを修正",
+      "Colors": "オプションでsrc/app/globals.cssでカラーパレットを更新"
+    },
+    "Question9": "どのように貢献できますか？",
+    "Answer9": "貢献を歓迎します！GitHubでイシューを開いたり、プルリクエストを送信したり、ドキュメントの改善を手伝ったりしてください。プロジェクトは標準的なオープンソース貢献ガイドラインに従っています。"
+  },
+  "Legal": {
+    "Privacy": {
+      "Title": "プライバシーポリシー",
+      "Description": "データの収集、使用、保護方法について学ぶ",
+      "LastUpdated": "最終更新：",
+      "Section1Title": "1. 収集する情報",
+      "Section1Content": "お客様が直接提供する情報（お名前、メールアドレス、その他お客様が提供することを選択した情報を含みますがこれらに限定されません）を収集します。",
+      "Section2Title": "2. 情報の使用方法",
+      "Section2Content": "収集した情報は以下の目的で使用します：",
+      "Section2List": [
+        "サービスの提供、維持、改善",
+        "技術的な通知とサポートメッセージの送信",
+        "お客様のコメントや質問への回答",
+        "詐欺や悪用からの保護"
+      ],
+      "Section3Title": "3. データセキュリティ",
+      "Section3Content": "お客様の情報を紛失、盗難、誤用、不正アクセス、開示、改変、破壊から保護するため、合理的な措置を講じています。",
+      "Section4Title": "4. お問い合わせ",
+      "Section4Content": "このプライバシーポリシーについてご質問がございましたら、以下までお問い合わせください：",
+      "ContactEmail": "メール：privacy@example.com",
+      "ReturnHome": "ホームに戻る"
+    },
+    "Terms": {
+      "Title": "利用規約",
+      "Description": "利用規約と使用契約をお読みください",
+      "LastUpdated": "最終更新：",
+      "Section1Title": "1. 規約の承諾",
+      "Section1Content": "このウェブサイトにアクセスし使用することにより、お客様はこの契約の条項と規定に拘束されることに同意し承諾します。",
+      "Section2Title": "2. 使用ライセンス",
+      "Section2Content": "個人的、非商業的な一時的な閲覧のみを目的として、当ウェブサイト上の資料（情報またはソフトウェア）の1部のコピーを一時的にダウンロードすることが許可されています。",
+      "Section3Title": "3. 免責事項",
+      "Section3Content": "当ウェブサイト上の資料は「現状のまま」で提供されています。明示または暗示を問わず、いかなる保証も行わず、商品性、特定目的への適合性、知的財産権の非侵害またはその他の権利侵害に関する暗示的保証または条件を含むがこれらに限定されない、その他すべての保証を否認し無効とします。",
+      "Section4Title": "4. クレジットシステムと支払い",
+      "Section4Content1": "当サービスはクレジットベースのシステムで運営されています。当プラットフォームを通じて購入されたクレジットは、購入日から{years}年間有効です。すべての支払いは、当社の支払い処理パートナーであるStripeを通じて安全に処理されます。",
+      "Section4Content2": "支払いが正常に処理されると、クレジットは即座にお客様のアカウントに追加されます。購入されたクレジットの返金は行いません。クレジットパッケージの価格と利用可能性は、事前の通知なしに変更される場合があります。",
+      "Section4Content3": "無料クレジットは、プロモーションオファーや月次割り当ての一部として提供される場合があります。これらのクレジットは異なる条件と有効期限の対象となり、発行時に明確に伝達されます。",
+      "Section5Title": "5. 責任の制限",
+      "Section5Content": "いかなる場合においても、当社または当社のサプライヤーは、当ウェブサイト上の資料の使用または使用不能から生じるいかなる損害（データの損失や利益の損失、または事業の中断による損害を含むがこれらに限定されない）についても責任を負いません。",
+      "ReturnHome": "ホームに戻る"
+    }
   }
 }

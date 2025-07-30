@@ -8,72 +8,67 @@ import {
   SunIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
+import { getTranslations } from "next-intl/server";
 
-const features = [
+const getFeatures = (t: any) => [
   {
-    name: "Authentication Ready",
-    description:
-      "Complete authentication system with email/password sign in, sign up, forgot password flow, and session management using Lucia Auth.",
+    name: t("AuthenticationReady.name"),
+    description: t("AuthenticationReady.description"),
     icon: ShieldCheckIcon,
   },
   {
-    name: "Database & Email",
-    description:
-      "Drizzle ORM with Cloudflare D1 for the database, and React Email with Resend for beautiful email templates.",
+    name: t("DatabaseEmail.name"),
+    description: t("DatabaseEmail.description"),
     icon: EnvelopeIcon,
   },
   {
-    name: "Modern Stack",
-    description:
-      "Next.js 15 App Router with React Server Components, Server Actions, and Edge Runtime for optimal performance.",
+    name: t("ModernStack.name"),
+    description: t("ModernStack.description"),
     icon: BoltIcon,
   },
   {
-    name: "Beautiful UI",
-    description:
-      "Polished UI with Tailwind CSS, Shadcn UI components, dark/light mode, and responsive design out of the box.",
+    name: t("BeautifulUI.name"),
+    description: t("BeautifulUI.description"),
     icon: SunIcon,
   },
   {
-    name: "Edge Deployment",
-    description:
-      "Deploy globally with Cloudflare Workers for zero cold starts and leverage Cloudflare's edge network for blazing-fast performance.",
+    name: t("EdgeDeployment.name"),
+    description: t("EdgeDeployment.description"),
     icon: CloudIcon,
   },
   {
-    name: "Developer Experience",
-    description:
-      "GitHub Actions for deployment, comprehensive documentation, and TypeScript for type safety.",
+    name: t("DeveloperExperience.name"),
+    description: t("DeveloperExperience.description"),
     icon: CommandLineIcon,
   },
   {
-    name: "Form Handling",
-    description:
-      "Built-in form validation with Zod and React Hook Form for a smooth user experience.",
+    name: t("FormHandling.name"),
+    description: t("FormHandling.description"),
     icon: RocketLaunchIcon,
   },
   {
-    name: "Team Ready",
-    description:
-      "Built with collaboration in mind. Easy to customize and extend with your team's requirements.",
+    name: t("TeamReady.name"),
+    description: t("TeamReady.description"),
     icon: UserGroupIcon,
   },
 ];
 
-export function Features() {
+export async function Features() {
+  const t = await getTranslations("Features");
+  const features = getFeatures(t);
+
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600 dark:text-indigo-400">
-            Production Ready
+            {t("SectionSubtitle")}
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Everything you need to build a SaaS
+            {t("SectionTitle")}
           </p>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Start with a complete foundation. All the essential features are
-            built-in, so you can focus on what makes your SaaS unique.
+            {t("SectionDescription")}
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

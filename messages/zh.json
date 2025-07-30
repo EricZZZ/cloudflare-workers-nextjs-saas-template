@@ -1,5 +1,158 @@
 {
-  "Index": {
-    "HeroTitle": "生产就绪的 Next.js SaaS 模板"
+  "Hero": {
+    "HeroTitle": "生产就绪的 Next.js SaaS 模板",
+    "HeroDescription": "一个现代化的开源模板，用于构建基于 Next.js 15、Cloudflare Workers 的 SaaS 应用程序，包含快速启动所需的一切。",
+    "ViewOnGitHub": "在 GitHub 上查看",
+    "TryDemo": "试用演示",
+    "FreeOpenSource": "100% 免费开源"
+  },
+  "Features": {
+    "SectionSubtitle": "生产就绪",
+    "SectionTitle": "构建 SaaS 所需的一切",
+    "SectionDescription": "从完整的基础开始。所有基本功能都已内置，让您专注于打造独特的 SaaS 产品。",
+    "AuthenticationReady": {
+      "name": "身份验证就绪",
+      "description": "完整的身份验证系统，包括邮箱/密码登录、注册、忘记密码流程，以及使用 Lucia Auth 的会话管理。"
+    },
+    "DatabaseEmail": {
+      "name": "数据库与邮件",
+      "description": "使用 Drizzle ORM 和 Cloudflare D1 数据库，以及 React Email 和 Resend 提供精美的邮件模板。"
+    },
+    "ModernStack": {
+      "name": "现代技术栈",
+      "description": "Next.js 15 App Router 配合 React Server Components、Server Actions 和 Edge Runtime，实现最佳性能。"
+    },
+    "BeautifulUI": {
+      "name": "精美界面",
+      "description": "使用 Tailwind CSS、Shadcn UI 组件打造精美界面，内置深色/浅色模式和响应式设计。"
+    },
+    "EdgeDeployment": {
+      "name": "边缘部署",
+      "description": "通过 Cloudflare Workers 全球部署，零冷启动，利用 Cloudflare 边缘网络实现极速性能。"
+    },
+    "DeveloperExperience": {
+      "name": "开发者体验",
+      "description": "GitHub Actions 自动部署、完整文档和 TypeScript 类型安全保障。"
+    },
+    "FormHandling": {
+      "name": "表单处理",
+      "description": "内置 Zod 和 React Hook Form 表单验证，提供流畅的用户体验。"
+    },
+    "TeamReady": {
+      "name": "团队协作",
+      "description": "专为协作而设计。易于定制和扩展，满足您团队的需求。"
+    }
+  },
+  "FAQ": {
+    "SectionTitle": "常见问题",
+    "Question1": "这个模板真的免费吗？",
+    "Answer1": "是的，这个模板完全免费且开源！您可以将其用于个人和商业项目，无需任何许可费用。您可以自由地分叉、复制、修改和分发，无任何限制和归属要求。",
+    "Question2": "包含哪些功能？",
+    "Answer2": "该模板包含全面的功能集合：",
+    "Features": {
+      "Authentication": "邮箱/密码身份验证和忘记密码流程",
+      "Database": "Drizzle ORM 和 Cloudflare D1 数据库集成",
+      "Email": "React Email 和 Resend 驱动的邮件服务",
+      "UI": "Shadcn UI 和 Tailwind CSS 现代 UI 组件",
+      "Forms": "表单验证和错误处理",
+      "DarkMode": "深色模式支持",
+      "Responsive": "响应式设计",
+      "TypeScript": "整个代码库使用 TypeScript",
+      "Deployment": "GitHub Actions 自动化部署",
+      "Captcha": "Turnstile 验证码集成",
+      "SEO": "Next.js SEO 优化",
+      "More": "以及无数其他功能..."
+    },
+    "Question3": "技术栈是什么？",
+    "Answer3": "该模板使用现代可靠的技术：",
+    "TechStack": {
+      "NextJS": "Next.js 15 与 App Router 和 React 服务器组件",
+      "TypeScript": "TypeScript 类型安全",
+      "Styling": "Tailwind CSS 和 Shadcn UI 样式",
+      "Database": "DrizzleORM 与 Cloudflare D1 数据库",
+      "Auth": "Lucia Auth 身份验证",
+      "Workers": "Cloudflare Workers 无服务器部署",
+      "KV": "Cloudflare KV 会话存储",
+      "Email": "React Email 美观邮件模板"
+    },
+    "Question4": "如何部署我的应用程序？",
+    "Answer4": "部署通过 GitHub Actions 自动化。您需要：",
+    "DeploymentSteps": {
+      "Step1": "创建 Cloudflare D1 和 KV 命名空间",
+      "Step2": "设置 Resend 邮件服务",
+      "Step3": "配置 Turnstile 验证码",
+      "Step4": "将 Cloudflare API 令牌添加到 GitHub 密钥",
+      "Step5": "推送到主分支"
+    },
+    "DeploymentNote": "部署过程在 GitHub 仓库中有完整文档。",
+    "Question5": "开始需要什么？",
+    "Answer5": "您需要一个 Cloudflare 账户（免费版即可）、本地安装 Node.js，以及 React 和 TypeScript 的基础知识。模板包含详细文档指导您完成设置。",
+    "Answer5Note": "您也可以查看文档获取更多信息。",
+    "Question6": "即将推出的功能有哪些？",
+    "Answer6": "我们有一个令人兴奋的路线图！计划功能包括：",
+    "UpcomingFeatures": {
+      "I18n": "多语言支持 (i18n)",
+      "Billing": "计费和支付处理",
+      "Admin": "管理员仪表板",
+      "EmailVerification": "注册时邮箱验证",
+      "Notifications": "通知系统",
+      "Webhooks": "Webhooks 支持",
+      "Team": "团队协作功能",
+      "Realtime": "实时更新",
+      "Analytics": "分析仪表板"
+    },
+    "Question7": "可以预览邮件模板吗？",
+    "Answer7": "可以！运行 pnpm email:dev 并打开 http://localhost:3001 来预览和编辑邮件模板。它们使用 React Email 构建，提供出色的开发体验。",
+    "Question8": "如何自定义模板？",
+    "Answer8": "在部署到生产环境之前，您应该：",
+    "CustomizationSteps": {
+      "Constants": "更新 src/constants.ts 中的项目详情",
+      "Docs": "自定义 ./cursor-docs 中的文档",
+      "Footer": "修改 src/components/footer.tsx 中的页脚",
+      "Colors": "可选择更新 src/app/globals.css 中的调色板"
+    },
+    "Question9": "如何贡献？",
+    "Answer9": "欢迎贡献！请随时在 GitHub 上提出问题、提交拉取请求或帮助改进文档。项目遵循标准的开源贡献指南。"
+  },
+  "Legal": {
+    "Privacy": {
+      "Title": "隐私政策",
+      "Description": "了解我们如何收集、使用和保护您的数据",
+      "LastUpdated": "最后更新：",
+      "Section1Title": "1. 我们收集的信息",
+      "Section1Content": "我们收集您直接提供给我们的信息，包括但不限于您的姓名、电子邮件地址以及您选择提供的任何其他信息。",
+      "Section2Title": "2. 我们如何使用您的信息",
+      "Section2Content": "我们使用收集的信息来：",
+      "Section2List": [
+        "提供、维护和改进我们的服务",
+        "向您发送技术通知和支持消息",
+        "回应您的评论和问题",
+        "防范欺诈和滥用"
+      ],
+      "Section3Title": "3. 数据安全",
+      "Section3Content": "我们采取合理措施来帮助保护您的信息免受丢失、盗窃、误用和未经授权的访问、披露、更改和销毁。",
+      "Section4Title": "4. 联系我们",
+      "Section4Content": "如果您对本隐私政策有任何疑问，请通过以下方式联系我们：",
+      "ContactEmail": "电子邮件：privacy@example.com",
+      "ReturnHome": "返回首页"
+    },
+    "Terms": {
+      "Title": "服务条款",
+      "Description": "阅读我们的服务条款和使用协议",
+      "LastUpdated": "最后更新：",
+      "Section1Title": "1. 条款接受",
+      "Section1Content": "通过访问和使用本网站，您接受并同意受本协议条款和条件的约束。",
+      "Section2Title": "2. 使用许可",
+      "Section2Content": "允许您临时下载我们网站上的材料（信息或软件）的一份副本，仅供个人、非商业性临时查看。",
+      "Section3Title": "3. 免责声明",
+      "Section3Content": "我们网站上的材料按\"现状\"提供。我们不作任何明示或暗示的保证，并在此否认和否定所有其他保证，包括但不限于适销性、特定用途适用性或不侵犯知识产权或其他权利侵犯的暗示保证或条件。",
+      "Section4Title": "4. 积分系统和付款",
+      "Section4Content1": "我们的服务基于积分系统运行。通过我们平台购买的积分自购买之日起 {years} 年内有效。所有付款均通过我们的支付处理合作伙伴 Stripe 安全处理。",
+      "Section4Content2": "一旦付款成功处理，积分将立即添加到您的账户中。我们不为已购买的积分提供退款。积分包的价格和可用性可能会在不事先通知的情况下发生变化。",
+      "Section4Content3": "免费积分可能作为促销优惠或月度分配的一部分提供。这些积分受不同的条款和到期期限约束，将在发放时明确告知。",
+      "Section5Title": "5. 责任限制",
+      "Section5Content": "在任何情况下，我们或我们的供应商都不对因使用或无法使用我们网站上的材料而产生的任何损害（包括但不限于数据丢失或利润损失或业务中断造成的损害）承担责任。",
+      "ReturnHome": "返回首页"
+    }
   }
 }

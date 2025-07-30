@@ -1,5 +1,158 @@
 {
-  "Index": {
-    "HeroTitle": "Production-Ready SaaS Template for Next.js"
+  "Hero": {
+    "HeroTitle": "Production-Ready SaaS Template for Next.js",
+    "HeroDescription": "A modern, open-source template for building SaaS applications with Next.js 15, Cloudflare Workers, and everything you need to launch quickly.",
+    "ViewOnGitHub": "View on GitHub",
+    "TryDemo": "Try Demo",
+    "FreeOpenSource": "100% Free & Open Source"
+  },
+  "Features": {
+    "SectionSubtitle": "Production Ready",
+    "SectionTitle": "Everything you need to build a SaaS",
+    "SectionDescription": "Start with a complete foundation. All the essential features are built-in, so you can focus on what makes your SaaS unique.",
+    "AuthenticationReady": {
+      "name": "Authentication Ready",
+      "description": "Complete authentication system with email/password sign in, sign up, forgot password flow, and session management using Lucia Auth."
+    },
+    "DatabaseEmail": {
+      "name": "Database & Email",
+      "description": "Drizzle ORM with Cloudflare D1 for the database, and React Email with Resend for beautiful email templates."
+    },
+    "ModernStack": {
+      "name": "Modern Stack",
+      "description": "Next.js 15 App Router with React Server Components, Server Actions, and Edge Runtime for optimal performance."
+    },
+    "BeautifulUI": {
+      "name": "Beautiful UI",
+      "description": "Polished UI with Tailwind CSS, Shadcn UI components, dark/light mode, and responsive design out of the box."
+    },
+    "EdgeDeployment": {
+      "name": "Edge Deployment",
+      "description": "Deploy globally with Cloudflare Workers for zero cold starts and leverage Cloudflare's edge network for blazing-fast performance."
+    },
+    "DeveloperExperience": {
+      "name": "Developer Experience",
+      "description": "GitHub Actions for deployment, comprehensive documentation, and TypeScript for type safety."
+    },
+    "FormHandling": {
+      "name": "Form Handling",
+      "description": "Built-in form validation with Zod and React Hook Form for a smooth user experience."
+    },
+    "TeamReady": {
+      "name": "Team Ready",
+      "description": "Built with collaboration in mind. Easy to customize and extend with your team's requirements."
+    }
+  },
+  "FAQ": {
+    "SectionTitle": "Frequently asked questions",
+    "Question1": "Is this template really free?",
+    "Answer1": "Yes, this template is completely free and open source! You can use it for both personal and commercial projects without any licensing fees. You can fork, copy, modify, and distribute it as you see fit without any restrictions and attribution.",
+    "Question2": "What features are included?",
+    "Answer2": "The template includes a comprehensive set of features:",
+    "Features": {
+      "Authentication": "Authentication with email/password and forgot password flow",
+      "Database": "Database integration with Drizzle ORM and Cloudflare D1",
+      "Email": "Email service powered by React Email and Resend",
+      "UI": "Modern UI components from Shadcn UI and Tailwind CSS",
+      "Forms": "Form validations and error handling",
+      "DarkMode": "Dark mode support",
+      "Responsive": "Responsive design",
+      "TypeScript": "TypeScript throughout the codebase",
+      "Deployment": "Automated deployments with GitHub Actions",
+      "Captcha": "Captcha integration with Turnstile",
+      "SEO": "SEO optimization with Next.js",
+      "More": "And countless other features..."
+    },
+    "Question3": "What's the tech stack?",
+    "Answer3": "The template uses modern and reliable technologies:",
+    "TechStack": {
+      "NextJS": "Next.js 15 with App Router and React Server Components",
+      "TypeScript": "TypeScript for type safety",
+      "Styling": "Tailwind CSS and Shadcn UI for styling",
+      "Database": "DrizzleORM with Cloudflare D1 for database",
+      "Auth": "Lucia Auth for authentication",
+      "Workers": "Cloudflare Workers for serverless deployment",
+      "KV": "Cloudflare KV for session storage",
+      "Email": "React Email for beautiful email templates"
+    },
+    "Question4": "How do I deploy my application?",
+    "Answer4": "Deployment is automated with GitHub Actions. You'll need to:",
+    "DeploymentSteps": {
+      "Step1": "Create Cloudflare D1 and KV namespaces",
+      "Step2": "Set up Resend for email service",
+      "Step3": "Configure Turnstile for captcha",
+      "Step4": "Add your Cloudflare API token to GitHub secrets",
+      "Step5": "Push to the main branch"
+    },
+    "DeploymentNote": "The deployment process is fully documented in the GitHub repository.",
+    "Question5": "What do I need to get started?",
+    "Answer5": "You'll need a Cloudflare account (free tier is fine), Node.js installed locally, and basic knowledge of React and TypeScript. The template includes detailed documentation to guide you through the setup.",
+    "Answer5Note": "You can also check out the documentation for more information.",
+    "Question6": "What are the upcoming features?",
+    "Answer6": "We have an exciting roadmap ahead! Planned features include:",
+    "UpcomingFeatures": {
+      "I18n": "Multi-language support (i18n)",
+      "Billing": "Billing and payment processing",
+      "Admin": "Admin dashboard",
+      "EmailVerification": "Email verification on sign up",
+      "Notifications": "Notifications system",
+      "Webhooks": "Webhooks support",
+      "Team": "Team collaboration features",
+      "Realtime": "Real-time updates",
+      "Analytics": "Analytics dashboard"
+    },
+    "Question7": "Can I preview the email templates?",
+    "Answer7": "Yes! Run pnpm email:dev and open http://localhost:3001 to preview and edit the email templates. They're built with React Email for a great developer experience.",
+    "Question8": "How do I customize the template?",
+    "Answer8": "Before deploying to production, you should:",
+    "CustomizationSteps": {
+      "Constants": "Update project details in src/constants.ts",
+      "Docs": "Customize the documentation in ./cursor-docs",
+      "Footer": "Modify the footer in src/components/footer.tsx",
+      "Colors": "Optionally update the color palette in src/app/globals.css"
+    },
+    "Question9": "How can I contribute?",
+    "Answer9": "Contributions are welcome! Feel free to open issues, submit pull requests, or help improve the documentation on GitHub. The project follows standard open source contribution guidelines."
+  },
+  "Legal": {
+    "Privacy": {
+      "Title": "Privacy Policy",
+      "Description": "Learn how we collect, use, and protect your data",
+      "LastUpdated": "Last updated:",
+      "Section1Title": "1. Information We Collect",
+      "Section1Content": "We collect information you provide directly to us, including but not limited to your name, email address, and any other information you choose to provide.",
+      "Section2Title": "2. How We Use Your Information",
+      "Section2Content": "We use the information we collect to:",
+      "Section2List": [
+        "Provide, maintain, and improve our services",
+        "Send you technical notices and support messages",
+        "Respond to your comments and questions",
+        "Protect against fraud and abuse"
+      ],
+      "Section3Title": "3. Data Security",
+      "Section3Content": "We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access, disclosure, alteration, and destruction.",
+      "Section4Title": "4. Contact Us",
+      "Section4Content": "If you have any questions about this Privacy Policy, please contact us at:",
+      "ContactEmail": "Email: privacy@example.com",
+      "ReturnHome": "Return to Home"
+    },
+    "Terms": {
+      "Title": "Terms of Service",
+      "Description": "Read our terms of service and usage agreement",
+      "LastUpdated": "Last updated:",
+      "Section1Title": "1. Acceptance of Terms",
+      "Section1Content": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.",
+      "Section2Title": "2. Use License",
+      "Section2Content": "Permission is granted to temporarily download one copy of the materials (information or software) on our website for personal, non-commercial transitory viewing only.",
+      "Section3Title": "3. Disclaimer",
+      "Section3Content": "The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.",
+      "Section4Title": "4. Credit System and Payments",
+      "Section4Content1": "Our service operates on a credit-based system. Credits purchased through our platform are valid for {years} years from the date of purchase. All payments are processed securely through Stripe, our payment processing partner.",
+      "Section4Content2": "Once a payment is successfully processed, credits will be immediately added to your account. We do not offer refunds for purchased credits. The price and availability of credit packages may change without prior notice.",
+      "Section4Content3": "Free credits may be provided as part of promotional offers or monthly allocations. These credits are subject to different terms and expiration periods, which will be clearly communicated at the time they are issued.",
+      "Section5Title": "5. Limitations",
+      "Section5Content": "In no event shall we or our suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website.",
+      "ReturnHome": "Return to Home"
+    }
   }
 }

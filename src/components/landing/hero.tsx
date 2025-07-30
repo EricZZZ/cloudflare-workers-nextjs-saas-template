@@ -8,7 +8,7 @@ import { GITHUB_REPO_URL } from "@/constants";
 import { getTotalUsers } from "@/utils/stats";
 
 export async function Hero() {
-  const t = await getTranslations("Index");
+  const t = await getTranslations("Hero");
   return (
     <div className="relative isolate pt-14 dark:bg-gray-900">
       <div className="pt-20 pb-24 sm:pt-20 sm:pb-32 lg:pb-40">
@@ -16,7 +16,7 @@ export async function Hero() {
           <div className="mx-auto max-w-2xl text-center">
             <div className="mb-10 flex justify-center gap-4 flex-wrap">
               <ShinyButton className="rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 ring-1 ring-inset ring-indigo-500/20">
-                100% Free & Open Source
+                {t("FreeOpenSource")}
               </ShinyButton>
               <Suspense fallback={<TotalUsersButtonSkeleton />}>
                 <TotalUsersButton />
@@ -26,19 +26,17 @@ export async function Hero() {
               {t("HeroTitle")}
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              A modern, open-source template for building SaaS applications with
-              Next.js 15, Cloudflare Workers, and everything you need to launch
-              quickly.
+              {t("HeroDescription")}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-4 md:gap-x-6">
               <a href={GITHUB_REPO_URL} target="_blank">
                 <Button size="lg" className="rounded-full">
-                  View on GitHub
+                  {t("ViewOnGitHub")}
                 </Button>
               </a>
               <Link href="/sign-in">
                 <Button variant="outline" size="lg" className="rounded-full">
-                  Try Demo
+                  {t("TryDemo")}
                 </Button>
               </Link>
             </div>
