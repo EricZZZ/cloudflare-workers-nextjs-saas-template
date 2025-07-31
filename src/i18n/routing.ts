@@ -6,4 +6,7 @@ export const routing = defineRouting({
 
   // Used when no locale matches
   defaultLocale: "en",
+
+  // 禁用自动语言检测，确保默认语言不带路径前缀
+  localeDetection: false
 });

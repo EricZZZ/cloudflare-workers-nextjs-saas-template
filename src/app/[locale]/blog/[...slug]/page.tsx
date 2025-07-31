@@ -71,13 +71,8 @@ export async function generateStaticParams() {
     return [];
   }
 
-  // Check if allDocs is available
-  if (!allDocs) {
-    return [];
-  }
-
   // Extract locale and slug from each post
-  return allDocs
+  const paths = allDocs
     .filter((doc) => doc.type === "blog")
     .map((post) => {
       // Format: blog/en/my-first-post
@@ -90,6 +85,9 @@ export async function generateStaticParams() {
         slug,
       };
     });
+    
+  console.log("Generated static paths for blog posts:", paths);
+  return paths;
 }
 
 export default async function BlogPost({
