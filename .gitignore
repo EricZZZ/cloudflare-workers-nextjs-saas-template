@@ -49,3 +49,6 @@ dist
 !.dev.vars.example
 !.env*example
 *.log
+
+# fumadocs
+.source

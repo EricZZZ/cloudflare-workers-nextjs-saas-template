@@ -102,4 +102,187 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* 博客文章内容样式优化 */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose :where(h1, h2, h3, h4, h5, h6) {
+    @apply text-foreground;
+  }
+
+  .prose :where(p) {
+    @apply text-foreground;
+  }
+
+  .prose :where(strong) {
+    @apply text-foreground;
+  }
+
+  .prose :where(ul, ol) {
+    @apply text-foreground;
+  }
+
+  .prose :where(li) {
+    @apply text-foreground;
+  }
+
+  .prose :where(a) {
+    @apply text-primary;
+  }
+
+  .prose :where(blockquote) {
+    @apply text-foreground border-l-4 border-primary;
+  }
+
+  .prose :where(code) {
+    @apply text-foreground bg-muted px-1 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose :where(pre) {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+  }
+
+  .prose :where(pre code) {
+    @apply bg-transparent p-0 text-sm;
+  }
+
+  /* 深色主题下的博客文章内容样式 */
+  .dark .prose {
+    color: hsl(0 0% 98%);
+  }
+
+  .dark .prose :where(h1, h2, h3, h4, h5, h6) {
+    color: hsl(0 0% 98%);
+  }
+
+  .dark .prose :where(p) {
+    color: hsl(0 0% 90%);
+  }
+
+  .dark .prose :where(strong) {
+    color: hsl(0 0% 98%);
+  }
+
+  .dark .prose :where(ul, ol) {
+    color: hsl(0 0% 90%);
+  }
+
+  .dark .prose :where(li) {
+    color: hsl(0 0% 90%);
+  }
+
+  .dark .prose :where(a) {
+    color: hsl(214 100% 70%);
+  }
+
+  .dark .prose :where(blockquote) {
+    color: hsl(0 0% 90%);
+    border-color: hsl(0 0% 98%);
+  }
+
+  .dark .prose :where(code) {
+    background-color: hsl(217 32% 35%);
+    color: hsl(0 0% 98%);
+  }
+
+  .dark .prose :where(pre) {
+    background-color: hsl(217 32% 20%);
+    color: hsl(0 0% 98%);
+  }
+
+  /* 代码块样式优化 */
+  pre[class*="language-"] {
+    @apply bg-muted text-foreground;
+  }
+
+  code[class*="language-"] {
+    @apply text-foreground;
+  }
+
+  /* 浅色主题下的代码块样式 */
+  :root pre[class*="language-"] {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+  }
+
+  :root code[class*="language-"] {
+    color: #0f172a;
+  }
+
+  /* 深色主题下的代码块样式 */
+  .dark pre[class*="language-"] {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+  }
+
+  .dark code[class*="language-"] {
+    color: #f1f5f9;
+  }
+
+  /* 代码语法高亮 - 基础样式 */
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    @apply text-muted-foreground;
+  }
+
+  .token.punctuation {
+    @apply text-foreground/80;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    @apply text-blue-400;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    @apply text-green-400;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    @apply text-foreground/80;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    @apply text-purple-400;
+  }
+
+  .token.function,
+  .token.class-name {
+    @apply text-yellow-400;
+  }
+
+  .token.regex,
+  .token.important,
+  .token.variable {
+    @apply text-red-400;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
 }

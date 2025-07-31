@@ -122,6 +122,7 @@ Have a look at the [project plan](./cursor-docs/project-plan.md) to get an overv
 - [ ] sitemap.xml 📄
 - [ ] robots.txt 📄
 - [x] Multi-language support (i18n) 🌐
+- [x] Blog System 📝
 - [ ] Notifications 🔔
 - [ ] Webhooks 🔗
 

@@ -10,8 +10,9 @@
     "Legal": "Legal",
     "TermsOfService": "Terms of Service",
     "PrivacyPolicy": "Privacy Policy",
-    "Company": "Company",
+    "Company": "Quick Links",
     "Home": "Home",
+    "Blog": "Blog",
     "Social": "Social",
     "AllRightsReserved": "All rights reserved.",
     "ForkOnGithub": "Fork on Github",
@@ -173,5 +174,13 @@
       "Section5Content": "In no event shall we or our suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website.",
       "ReturnHome": "Return to Home"
     }
+  },
+  "Blog":{
+    "Title": "Blog",
+    "backToBlog": "Back to Blog",
+    "TableOfContents": "Table of Contents",
+    "ReadMore": "Read more",
+    "RecentPosts": "Recent posts",
+    "NoPosts": "No posts available at the moment"
   }
 }

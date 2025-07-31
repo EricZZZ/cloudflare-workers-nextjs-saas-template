@@ -10,8 +10,9 @@
     "Legal": "法律",
     "TermsOfService": "服务条款",
     "PrivacyPolicy": "隐私政策",
-    "Company": "公司",
-    "Home": "首页",
+    "Company": "快速链接",
+    "Home": "主页",
+    "Blog": "博客",
     "Social": "社交",
     "AllRightsReserved": "版权所有。",
     "ForkOnGithub": "在 Github 上 Fork",
@@ -173,5 +174,13 @@
       "Section5Content": "在任何情况下，我们或我们的供应商都不对因使用或无法使用我们网站上的材料而产生的任何损害（包括但不限于数据丢失或利润损失或业务中断造成的损害）承担责任。",
       "ReturnHome": "返回首页"
     }
+  },
+  "Blog":{
+    "Title": "博客",
+    "backToBlog": "返回博客",
+    "TableOfContents": "目录",
+    "ReadMore": "阅读更多",
+    "RecentPosts": "最新文章",
+    "NoPosts": "目前没有可用的文章"
   }
 }

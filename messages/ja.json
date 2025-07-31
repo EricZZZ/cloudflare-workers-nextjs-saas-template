@@ -10,8 +10,9 @@
     "Legal": "法的事項",
     "TermsOfService": "利用規約",
     "PrivacyPolicy": "プライバシーポリシー",
-    "Company": "会社",
+    "Company": "クイックリンク",
     "Home": "ホーム",
+    "Blog": "ブログ",
     "Social": "ソーシャル",
     "AllRightsReserved": "全著作権所有。",
     "ForkOnGithub": "Github でフォーク",
@@ -173,5 +174,10 @@
       "Section5Content": "いかなる場合においても、当社または当社のサプライヤーは、当ウェブサイト上の資料の使用または使用不能から生じるいかなる損害（データの損失や利益の損失、または事業の中断による損害を含むがこれらに限定されない）についても責任を負いません。",
       "ReturnHome": "ホームに戻る"
     }
+  },
+  "Blog": {
+    "Title": "ブログ",
+    "backToBlog": "ブログに戻る",
+    "TableOfContents": "目次"
   }
 }

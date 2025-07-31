@@ -56,6 +56,14 @@ export function Footer() {
                     {t("Home")}
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-sm text-muted-foreground hover:text-foreground text-center md:text-left"
+                  >
+                    {t("Blog")}
+                  </Link>
+                </li>
               </ul>
             </div>
 

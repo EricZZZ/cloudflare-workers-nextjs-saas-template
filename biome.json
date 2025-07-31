@@ -28,6 +28,9 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      },
       "correctness": {
         "noUnusedVariables": "error",
         "noUnusedImports": "error"
