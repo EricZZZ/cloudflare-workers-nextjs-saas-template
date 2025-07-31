@@ -61,6 +61,9 @@ function ArticleContent({ post }: { post: Doc }) {
 
 // 添加generateStaticParams函数以确保部署时正确生成静态页面
 export async function generateStaticParams() {
+  // 定义支持的语言列表
+  const SUPPORTED_LOCALES = ["en", "zh", "ja"];
+  
   // Load docs
   let allDocs: Doc[] | undefined;
   try {
@@ -71,21 +74,34 @@ export async function generateStaticParams() {
     return [];
   }
 
-  // Extract locale and slug from each post
-  const paths = allDocs
-    .filter((doc) => doc.type === "blog")
-    .map((post) => {
-      // Format: blog/en/my-first-post
+  // Check if allDocs is available
+  if (!allDocs) {
+    return [];
+  }
+
+  // 提取所有唯一的博客slug（去掉语言部分）
+  const blogDocs = allDocs.filter((doc) => doc.type === "blog");
+  const uniqueSlugs = [...new Set(
+    blogDocs.map((post) => {
+      // 格式如：blog/en/my-first-post
       const parts = post.slug.split("/");
-      const locale = parts[1];
-      const slug = parts.slice(2);
-      
-      return {
+      return parts.slice(2).join("/"); // 获取不带语言的slug部分
+    })
+  )];
+
+  // 为每个语言和slug组合生成路径
+  const paths = [];
+  for (const locale of SUPPORTED_LOCALES) {
+    for (const slug of uniqueSlugs) {
+      // slug需要是数组格式以匹配[...slug]参数
+      const slugArray = slug.split("/").filter(Boolean);
+      paths.push({
         locale,
-        slug,
-      };
-    });
-    
+        slug: slugArray,
+      });
+    }
+  }
+  
   console.log("Generated static paths for blog posts:", paths);
   return paths;
 }
