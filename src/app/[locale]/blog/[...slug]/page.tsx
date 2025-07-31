@@ -59,6 +59,39 @@ function ArticleContent({ post }: { post: Doc }) {
   );
 }
 
+// 添加generateStaticParams函数以确保部署时正确生成静态页面
+export async function generateStaticParams() {
+  // Load docs
+  let allDocs: Doc[] | undefined;
+  try {
+    allDocs = await getAllDocs();
+  } catch (error) {
+    console.error("Failed to load docs:", error);
+    // Return empty array if there's an error
+    return [];
+  }
+
+  // Check if allDocs is available
+  if (!allDocs) {
+    return [];
+  }
+
+  // Extract locale and slug from each post
+  return allDocs
+    .filter((doc) => doc.type === "blog")
+    .map((post) => {
+      // Format: blog/en/my-first-post
+      const parts = post.slug.split("/");
+      const locale = parts[1];
+      const slug = parts.slice(2);
+      
+      return {
+        locale,
+        slug,
+      };
+    });
+}
+
 export default async function BlogPost({
   params,
 }: {
