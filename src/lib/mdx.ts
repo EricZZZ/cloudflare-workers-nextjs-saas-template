@@ -2,7 +2,11 @@ import fs from "fs/promises";
 import { marked } from "marked";
 import path from "path";
 
-const contentDir = path.join(process.cwd(), "content");
+// 检查是否在边缘运行时环境
+const isEdgeRuntime = typeof process !== 'undefined' && process.env?.NEXT_RUNTIME === 'edge';
+
+// 只在非边缘环境中导入fs模块
+const contentDir = !isEdgeRuntime ? path.join(process.cwd(), "content") : "";
 
 export interface Doc {
   slug: string;
@@ -25,6 +29,11 @@ export interface Heading {
 }
 
 export async function loadDocs(): Promise<Doc[]> {
+  // 在边缘环境中返回空数组
+  if (isEdgeRuntime) {
+    return [];
+  }
+
   const docs: Doc[] = [];
 
   try {
@@ -139,9 +148,12 @@ export async function loadDocs(): Promise<Doc[]> {
               return `<h${level} id="${uniqueId}">${content}</h${level}>`;
             }
           );
-          
+
           // Remove H1 headings from the content (but keep them for the title)
-          const contentWithoutH1 = processedHtml.replace(/<h1[^>]*>.*?<\/h1>/g, '');
+          const contentWithoutH1 = processedHtml.replace(
+            /<h1[^>]*>.*?<\/h1>/g,
+            ""
+          );
 
           // Now extract the headings with IDs (excluding H1 for TOC)
           const extractHeadingRegex = /<h([1-6]) id="([^"]*)">(.*?)<\/h[1-6]>/g;

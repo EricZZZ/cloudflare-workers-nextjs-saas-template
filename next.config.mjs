@@ -7,7 +7,7 @@ import { createMDX } from 'fumadocs-mdx/next';
 const withNextIntl = createNextIntlPlugin();
 const withMDX = createMDX({
   // customise the config file path
-  // configPath: "source.config.ts"
+  configPath: "source.config.ts"
 });
 
 // added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
